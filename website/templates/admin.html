@@ -1,0 +1,17 @@
+{% extends 'base/adminbase.html'%}
+{% block title %}  Admin List {% endblock %}
+{% block content %}
+<form id= "login-form" action="" method="post">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+  <!--Nombre-->
+  <div class="form-group">
+    <input type="text" name="username" class="form-control" placeholder="usuario" required autofocus value="{{request.form.username}}">
+  </div>
+  <!--Contraseña-->
+  <div class="form-group">
+    <input type="text" name="password" class="form-control" placeholder="contraseña" required value="{{request.form.password}}">
+  </div>
+  <!--Entrar-->
+  <button class="btn btn-lg btn-primary btn-block text-uppercase" placeholder="ingresar" type="submit" value="login">registrar</button>
+</form>
+{% endblock %}
